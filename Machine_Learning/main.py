@@ -34,7 +34,7 @@ class StudentInput(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "Welcome to the FastAPI application!"}
+    return {"message": "Student Performance Prediction API is running"}
 
 @app.post("/predict")
 def predict(student:StudentInput):
@@ -70,4 +70,5 @@ def predict(student:StudentInput):
     return {"registration_number": student.reg_no,
             "prediction": f"The student will {result} with a probability of {probability:.2f}",
             "Course Status": attendance_status,
+
             "weak_units": weak_units}
